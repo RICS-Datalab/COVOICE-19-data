@@ -13,7 +13,7 @@ command_exists () {
 if ! command_exists unzip; then
     echo "unzip command is not found. Do you want to install it? (yes/no)"
     read response
-    if [[ "$response" == "yes" ]]; then
+    if [[ "$response" == "yes" || "$response" == "y" || "$response" == "Y" || "$response" == "YES" || "$response" == "Yes" ]]; then
         sudo apt-get update
         sudo apt-get install unzip
     else
@@ -26,7 +26,8 @@ fi
 if ! command_exists zip; then
     echo "zip command is not found. Do you want to install it? (yes/no)"
     read response
-    if [[ "$response" == "yes" ]]; then
+    if [[ "$response" == "yes" || "$response" == "y" || "$response" == "Y" || "$response" == "YES" || "$response" == "Yes" ]]; then
+
         sudo apt-get update
         sudo apt-get install zip
     else
